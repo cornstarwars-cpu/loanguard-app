@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LoanGuard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="light">
+
+<!-- LANDING -->
+<div id="landing" class="screen active">
+  <div class="landing-card">
+    <h1>LoanGuard</h1>
+    <p>Proactive loan monitoring and repayment simulation for banks.</p>
+    <button class="primary-btn" onclick="startApp()">Get Started</button>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="screen">
+  <div class="topbar">
+    <h2 id="monthLabel">Month 1</h2>
+    <div class="topbar-actions">
+      <button class="secondary-btn" onclick="toggleTheme()">Toggle Theme</button>
+      <button class="secondary-btn" onclick="nextMonth()">Next Month</button>
+    </div>
+  </div>
+   
+  <div class="filters">
+  <button class="secondary-btn" onclick="setFilter('All')">All</button>
+  <button class="secondary-btn" onclick="setFilter('Healthy')">Healthy</button>
+  <button class="secondary-btn" onclick="setFilter('At Risk')">At Risk</button>
+  <button class="secondary-btn" onclick="setFilter('Delinquent')">Delinquent</button>
+</div>
+
+  <div class="metrics">
+    <div class="metric-card">
+      <span>Total Loans</span>
+      <strong id="totalLoans">0</strong>
+    </div>
+    <div class="metric-card warning">
+      <span>At Risk</span>
+      <strong id="atRiskLoans">0</strong>
+    </div>
+    <div class="metric-card danger">
+      <span>Delinquent</span>
+      <strong id="delinquentLoans">0</strong>
+    </div>
+    <div class="metric-card success">
+      <span>Health Score</span>
+      <strong id="healthScore">0 / 100</strong>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="panel">
+      <h3>Loans</h3>
+      <ul id="loanList"></ul>
+    </div>
+
+    <div class="panel">
+      <h3>Loan Details</h3>
+      <div id="loanDetails">Select a loan</div>
+    </div>
+  </div>
+
+  <div id="notificationArea" class="notifications"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
